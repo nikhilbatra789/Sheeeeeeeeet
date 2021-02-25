@@ -79,7 +79,7 @@ open class ActionSheetItemHandler: NSObject, UITableViewDataSource, UITableViewD
         guard let item = self.item(at: indexPath) else { return }
         tableView.deselectRow(at: indexPath, animated: true)
         guard let sheet = actionSheet else { return }
+        sheet.handleTap(on: item)   
         item.handleSelection(in: sheet.menu)
-        sheet.handleTap(on: item)
     }
 }
